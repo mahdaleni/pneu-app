@@ -295,8 +295,8 @@ input {
 }
 
 li {
-	font-family: monospace, serif;
-	font-size: 12px;
+	font-family: sans-serif;
+	font-size: 18px;
 }
 
 .tag-font {
