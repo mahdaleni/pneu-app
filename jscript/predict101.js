@@ -39,8 +39,8 @@ $("#image-selector").change(function () {
 let model;
 (async function () {
 	
-	model = await tf.loadModel('http://prototype.skyfire.woza.work/model_1/model.json');
-	$("#selected-image").attr("src", "http://prototype.skyfire.woza.work/assets/normal.jpeg")
+	model = await tf.loadModel('https://pneumonia-app.now.sh/model_1/model.json');
+	$("#selected-image").attr("src", "https://pneumonia-app.now.sh/assets/normal.jpeg")
 	
 	
 	// Simulate a click on the predict button
