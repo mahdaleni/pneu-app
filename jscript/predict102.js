@@ -89,7 +89,7 @@ $("#predict-button").click(async function () {
 		}).sort(function (a, b) {
 			return b.probability - a.probability;
 				
-		}).slice(0, 3);
+		}).slice(0, 2);
 	
 	
 $("#prediction-list").empty();
