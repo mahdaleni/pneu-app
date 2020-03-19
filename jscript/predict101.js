@@ -1,10 +1,4 @@
-// Code is based on a YouTube tutorial by deeplizard
-// https://www.youtube.com/watch?v=HEQDRWMK6yY
 
-
-
-// After the model loads we want to make a prediction on the default image.
-// Thus, the user will see predictions when the page is first loaded.
 
 function simulateClick(tabID) {
 	
@@ -25,10 +19,7 @@ $("#image-selector").change(function () {
 		reader.readAsDataURL(file);
 		
 		
-		// Simulate a click on the predict button
-		// This introduces a 0.5 second delay before the click.
-		// Without this long delay the model loads but may not automatically
-		// predict.
+		
 		setTimeout(simulateClick.bind(null,'predict-button'), 500);
 
 });
@@ -39,11 +30,11 @@ $("#image-selector").change(function () {
 let model;
 (async function () {
 	
-	model = await tf.loadModel('https://pneumonia-app.now.sh/model_1/model.json');
+	model = await tf.loadModel('https://pneumonia-app.now.sh/model_kaggle_3/model.json');
 	$("#selected-image").attr("src", "https://pneumonia-app.now.sh/assets/normal.jpeg")
 	
 	
-	// Simulate a click on the predict button
+	
 	predictOnLoad();
 	// Hide the model loading spinner
 	$('.progress-bar').hide();
@@ -81,11 +72,7 @@ $("#predict-button").click(async function () {
 	
 	
 	
-	// Pass the tensor to the model and call predict on it.
-	// Predict returns a tensor.
-	// data() loads the values of the output tensor and returns
-	// a promise of a typed array when the computation is complete.
-	// Notice the await and async keywords are used together.
+	
 	let predictions = await model.predict(tensor).data();
 	let top5 = Array.from(predictions)
 		.map(function (p, i) { // this is Array.map
