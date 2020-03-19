@@ -31,7 +31,7 @@ let model;
 (async function () {
 	
 	model = await tf.loadModel('https://pneumonia-app.now.sh/model_kaggle_3/model.json');
-	$("#selected-image").attr("src", "https://pneumonia-app.now.sh/assets/normal.jpeg")
+	$("#selected-image").attr("src", "https://pneumonia-app.now.sh/assets/normal1.jpeg")
 	
 	
 	
